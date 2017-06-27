@@ -1,0 +1,48 @@
+{
+  "name": "fpd",
+  "version": "0.0.0",
+  "description": "Fixed package dependencies",
+  "license": "MIT",
+  "author": "Philipp Beck <dertieran@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DerTieran/fpd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DerTieran/fpd/issues"
+  },
+  "homepage": "https://github.com/DerTieran/fpd#readme",
+  "main": "index.js",
+  "bin": {
+    "fpd": "cli.js"
+  },
+  "scripts": {
+    "test": "xo"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli",
+    "fixed",
+    "package",
+    "dependencies"
+  ],
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "meow": "^3.7.0",
+    "npm-package-arg": "^5.1.2",
+    "package-json": "^4.0.1",
+    "read-pkg": "^2.0.0",
+    "semver": "^5.3.0",
+    "update-notifier": "^2.2.0",
+    "write-pkg": "^3.1.0"
+  },
+  "devDependencies": {
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "space": true
+  }
+}
