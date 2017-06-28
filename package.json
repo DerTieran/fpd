@@ -1,6 +1,6 @@
 {
   "name": "fpd",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Fixed package dependencies",
   "license": "MIT",
   "author": "Philipp Beck <dertieran@gmail.com>",
