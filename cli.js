@@ -2,8 +2,8 @@
 'use strict';
 
 const meow = require('meow');
-const CliTable = require('cli-table');
 const updateNotifier = require('update-notifier');
+const {table, getBorderCharacters} = require('table');
 
 const fpd = require('./');
 
@@ -35,12 +35,9 @@ fpd(cli.flags)
       .filter(dependency => dependency.version.fixed)
       .map(dependency => [dependency.name, dependency.version.current, dependency.version.fixed]);
 
-    const table = new CliTable({
-      head: headers,
-      colAligns: headers.map((h, i) => i > 0 ? 'right' : 'left'),
-      style: {head: false}
+    return table([headers].concat(rows), {
+      border: getBorderCharacters('norc'),
+      columns: headers.map((h, i) => ({alignment: i > 0 ? 'right' : 'left'}))
     });
-    table.push(...rows);
-    return table.toString();
   })
   .then(console.log);
