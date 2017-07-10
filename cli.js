@@ -35,6 +35,10 @@ fpd(cli.flags)
       .filter(dependency => dependency.version.fixed && dependency.version.fixed !== dependency.version.current)
       .map(dependency => [dependency.name, dependency.version.current, dependency.version.fixed]);
 
+    if (rows.length === 0) {
+      return '\nNo dependencies to fix.\n';
+    }
+
     return table([headers].concat(rows), {
       border: getBorderCharacters('norc'),
       columns: headers.map((h, i) => ({alignment: i > 0 ? 'right' : 'left'}))
