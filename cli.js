@@ -32,7 +32,7 @@ fpd(cli.flags)
 
     const headers = ['Package', 'Current', 'Fixed'];
     const rows = dependencies
-      .filter(dependency => dependency.version.fixed)
+      .filter(dependency => dependency.version.fixed && dependency.version.fixed !== dependency.version.current)
       .map(dependency => [dependency.name, dependency.version.current, dependency.version.fixed]);
 
     return table([headers].concat(rows), {
